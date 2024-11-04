@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graph Generator</title>
+</head>
+<body>
+    <h1>Generate a Graph</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generate Graph</button>
+    </form>
+
+    {% if graph %}
+    <h2>Your Graph:</h2>
+    <img src="{{ graph_url }}" alt="Generated Graph" />
+    {% endif %}
+</body>
+</html>
